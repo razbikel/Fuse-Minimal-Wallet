@@ -1,0 +1,18 @@
+.input-address{
+    margin-right: 15px;
+    margin: auto;
+    width: 60%;
+}
+
+.container{
+    background-color: rgb(245, 245, 245);
+    width: 600px;
+    padding: 15px;
+    margin: 20px;
+    height: 500px;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* width: fit-content; */
+    margin: auto;
+    /* height:fit-content; */
+}
