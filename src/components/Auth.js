@@ -18,7 +18,7 @@ class Auth extends Component{
     connect = () => {
         this.props.fetchAccountAddress(this.state.account_address)
         .then(() => {
-            history.push('/Main');
+            history.push('/main');
         })
         .catch(error => console.error(error))
     };
@@ -27,7 +27,7 @@ class Auth extends Component{
         return(
             <div className="container">
                 <h2>Auth</h2>
-                <div className='auth-form'>
+                <div>
                     <FormGroup>
                         <FormControl 
                             type = 'text'

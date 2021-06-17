@@ -7,6 +7,8 @@ import rootReducer from './reducers/index'
 import {Provider} from 'react-redux'
 import Auth from './components/Auth'
 import Main from './components/Main'
+import AddToken from './components/Balances/AddToken';
+import ConfirmAddToken from './components/Balances/ConfirmAddToken';
 
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
@@ -30,7 +32,9 @@ function App() {
           <Router history={history}>
             <Switch>
               <Route exact path= '/' component={Auth} />
-              <AuthRoute path= '/Main' component={Main}/> 
+              <AuthRoute path= '/main' component={Main}/> 
+              <AuthRoute path= '/add-token' component={AddToken}/>
+              <AuthRoute path= '/confirm-add-token' component={ConfirmAddToken}/>  
             </Switch>
           </Router>
       </div>

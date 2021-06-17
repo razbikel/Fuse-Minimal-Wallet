@@ -1,12 +1,16 @@
 import  React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { fetchAccountTokens } from '../../actions/accountTokens';
+import { Button } from 'react-bootstrap';
 import Token from './Token';
+// import AddTokenModal from '../Modal/AddTokenModal';
+// import AddToken from './AddToken';
+import history from '../../history';
 
 class Balances extends Component{
 
     state = {
-        tokens: undefined
+        tokens: undefined,
     }
 
     componentDidMount(){
@@ -15,6 +19,10 @@ class Balances extends Component{
             this.setState({ tokens: this.props.accountTokens.tokens})
         })
         .catch((error) => console.error(error))
+    }
+
+    toggleAddToken = () => {
+        history.push('/add-token')
     }
 
     render(){
@@ -30,6 +38,8 @@ class Balances extends Component{
                             }) : null  
                     }
                 </div>
+                <br />
+                <Button onClick={this.toggleAddToken}>add token</Button>
             </div>
         )
     }
