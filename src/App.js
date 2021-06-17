@@ -1,15 +1,18 @@
 import './App.css';
-import createBrowserHistory from 'history/createBrowserHistory'
+import history from './history'
 import { Router, Redirect, Switch, Route } from 'react-router'
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import rootReducer from './reducers/index'
+import {Provider} from 'react-redux'
 import Auth from './components/Auth'
 import Main from './components/Main'
 
-const history = createBrowserHistory();
 
-let loggedIn = false;
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 const AuthRoute = (props) => {
-  if (!loggedIn){
+  if (!store.getState().account.loggedIn){
       return <Redirect to={{pathname: '/'}}/>
   }
 
@@ -21,15 +24,18 @@ const AuthRoute = (props) => {
 
 function App() {
   return (
-    <div className="App">
-        <h1>Fuse Wallet</h1>
-        <Router history={history}>
-          <Switch>
-            <Route exact path= '/' component={Auth} />
-            <AuthRoute path= '/Main' component={Main}/> 
-          </Switch>
-        </Router>
-    </div>
+    <Provider store = {store}>
+        <div className="App">
+          <h1>Fuse Wallet</h1>
+          <Router history={history}>
+            <Switch>
+              <Route exact path= '/' component={Auth} />
+              <AuthRoute path= '/Main' component={Main}/> 
+            </Switch>
+          </Router>
+      </div>
+    </Provider>
+
   );
 }
 

@@ -1,6 +1,9 @@
 import  React, {Component} from 'react';
 import {Button, FormGroup, FormControl} from 'react-bootstrap';
 import './Auth.css'
+import {connect} from 'react-redux';
+import { fetchAccountAddress } from '../actions/account';
+import history from '../history';
 
 class Auth extends Component{
 
@@ -13,9 +16,10 @@ class Auth extends Component{
     }
 
     connect = () => {
-        fetch(`https://explorer.fuse.io/api?module=${'account'}&action=${'balance'}&address=${this.state.account_address}`)
-        .then(res => res.json())
-        .then(json => console.log(json))
+        this.props.fetchAccountAddress(this.state.account_address)
+        .then(() => {
+            history.push('/Main');
+        })
         .catch(error => console.log(error))
     };
 
@@ -34,9 +38,16 @@ class Auth extends Component{
                     </FormGroup>
                 </div>
                 <Button onClick={this.connect}>Connect</Button>
+                {
+                    this.props.account.status === 'error' ? 
+                    <div>{this.props.account.message}</div> : null
+                }
             </div>
         )
     }
 }
 
-export default Auth;
+export default connect(
+    ({ account }) => ({ account }),
+    { fetchAccountAddress }
+)(Auth);
