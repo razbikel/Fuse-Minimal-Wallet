@@ -10,7 +10,15 @@ const ACCOUNT_TOKENS = {
     Success: 'Success'
 };
 
+const ACCOUNT_TRANSFERS = {
+    Fetching: 'Fetching',
+    Error: 'Error',
+    Success: 'Success'
+};
+
+
 export {
     ACCOUNT,
-    ACCOUNT_TOKENS
+    ACCOUNT_TOKENS,
+    ACCOUNT_TRANSFERS
 }
