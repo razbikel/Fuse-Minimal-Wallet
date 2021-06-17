@@ -1,12 +1,32 @@
 .container{
     background-color: rgb(245, 245, 245);
-    width: 600px;
+    /* width: 600px; */
     padding: 15px;
     margin: 20px;
-    height: 500px;
+    /* height: 500px; */
 
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    /* width: fit-content; */
+    width: fit-content;
     margin: auto;
-    /* height:fit-content; */
+    height:fit-content;
+}
+
+.route-bar{
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    width: 900px;
+}
+
+.route-bar span {
+    /* float: left; */
+    /* display: block; */
+    text-align: center;
+    padding: 14px 200px;
+    text-decoration: none;
+    font-size: 17px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor:pointer;
+    color:blue;
+    text-decoration:underline;
 }

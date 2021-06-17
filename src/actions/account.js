@@ -1,4 +1,4 @@
-import {ACCOUNT} from './types';
+import { ACCOUNT } from './types';
 import {BACKEND} from '../config';
 
 export const fetchAccountAddress = (accountAddress) => {

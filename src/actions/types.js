@@ -4,6 +4,13 @@ const ACCOUNT = {
     LoggedInSuccess: 'LoggedInSuccess'
 };
 
+const ACCOUNT_TOKENS = {
+    Fetching: 'Fetching',
+    Error: 'Error',
+    Success: 'Success'
+};
+
 export {
-    ACCOUNT
+    ACCOUNT,
+    ACCOUNT_TOKENS
 }

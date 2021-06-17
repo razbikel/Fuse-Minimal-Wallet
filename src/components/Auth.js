@@ -20,7 +20,7 @@ class Auth extends Component{
         .then(() => {
             history.push('/Main');
         })
-        .catch(error => console.log(error))
+        .catch(error => console.error(error))
     };
 
     render(){
