@@ -10,9 +10,9 @@
     color: rgb(0, 25, 41);
 }
 
-.error{
+.auth-error{
     position: relative;
-    top: 20%;
+    top: 20% !important;
     color: red;
     font-size: small;
 }

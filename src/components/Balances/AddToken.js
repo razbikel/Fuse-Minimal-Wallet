@@ -72,7 +72,7 @@ class AddToken extends Component{
     }
 
     error = () => {
-        const error = this.state.show_message ? <div className="error">{this.state.message}</div> : null;
+        const error = this.state.show_message ? <div className="add-error">{this.state.message}</div> : null;
         return error;
     }
 
@@ -106,11 +106,11 @@ class AddToken extends Component{
                         onChange = {(event) => this.fetchNewToken(event, "tokenDecimals")}
                         className='input-address' />
                 </FormGroup>
-                {this.error()}
                 <br /><br />
                 <Button className={"nav-button"} onClick={this.back}>back</Button>
                 &nbsp;&nbsp;&nbsp;
                 <Button className={"nav-button"} onClick={this.next} disabled={!this.state.next_button}>next</Button>
+                {this.error()}
         </div>
         )
     }

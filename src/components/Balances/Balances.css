@@ -29,7 +29,9 @@
     width: 600px;
 }
 
-.error{
+.add-error{
+    position: relative;
+    top: 5% !important;
     color: red;
     font-size: small;
 }

@@ -14,7 +14,8 @@ class Token extends Component{
         const transfers = this.props.account.map[token.contractAddress];
         history.push('/token-transfers', {
             transfers,
-            account: this.props.account.accountAddress
+            account: this.props.account.accountAddress,
+            symbol: token.symbol
         });
 
     }

@@ -10,13 +10,15 @@ class TokenTransfers extends Component{
     }
 
     render(){
+        const transfers =  this.props.location.state.transfers;
         return(
             <div>
-                <h2>token trasnfers</h2>
+                <h2>{this.props.location.state.symbol} trasnfers</h2>
                 {
-                    this.props.location.state.transfers.map((transfer, index) => {
-                        return <Transfer transfer={transfer} key={index}/>
-                    }) 
+                    transfers !== undefined ? 
+                        this.props.location.state.transfers.map((transfer, index) => {
+                            return <Transfer transfer={transfer} key={index}/>
+                        }) : <div>You dont have any transfers for {this.props.location.state.symbol}</div>
                 }
                 <Button onClick={this.back}>back</Button>
             </div>

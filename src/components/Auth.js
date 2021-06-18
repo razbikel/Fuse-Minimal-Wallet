@@ -42,7 +42,7 @@ class Auth extends Component{
                 </div>
                 {
                     this.props.account.status === 'error' ? 
-                    <div className="error">{this.props.account.message}</div> : null
+                    <div className="auth-error">{this.props.account.message}</div> : null
                 }
             </div>
         )
