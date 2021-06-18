@@ -5,21 +5,13 @@ import Transfer from './Transfer';
 
 class Transfers extends Component{
 
-    state = {
-        transfers: undefined
-    }
-
-    componentDidMount(){
-        this.setState({ transfers: this.props.accountTransfers.transfers })
-    }
-
-
     render(){
-        const transfers = this.state.transfers;
+        const transfers = this.props.accountTransfers.transfers;
         return(
             <div>
-                <h2>Transfers</h2>
                 <div>
+                    <br />
+                    <br />
                     {
                         transfers === undefined || this.props.accountTransfers.status === 'fetching' ? 
                             <div>fetchinig...</div>  :

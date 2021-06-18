@@ -10,6 +10,7 @@ import Main from './components/Main'
 import AddToken from './components/Balances/AddToken';
 import ConfirmAddToken from './components/Balances/ConfirmAddToken';
 import TokenTransfers from './components/Balances/TokenTransfers';
+import fuse from './assets/fuse.png'
 
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
@@ -29,16 +30,16 @@ function App() {
   return (
     <Provider store = {store}>
         <div className="App">
-          <h1>Fuse Wallet</h1>
-          <Router history={history}>
-            <Switch>
-              <Route exact path= '/' component={Auth} />
-              <AuthRoute path= '/main' component={Main}/> 
-              <AuthRoute path= '/add-token' component={AddToken}/>
-              <AuthRoute path= '/confirm-add-token' component={ConfirmAddToken}/>
-              <AuthRoute path= '/token-transfers' component={TokenTransfers}/>  
-            </Switch>
-          </Router>
+            <img src={fuse} alt={"img"}></img>
+            <Router history={history}>
+              <Switch>
+                <Route exact path= '/' component={Auth} />
+                <AuthRoute path= '/main' component={Main}/> 
+                <AuthRoute path= '/add-token' component={AddToken}/>
+                <AuthRoute path= '/confirm-add-token' component={ConfirmAddToken}/>
+                <AuthRoute path= '/token-transfers' component={TokenTransfers}/>  
+              </Switch>
+            </Router>
       </div>
     </Provider>
 

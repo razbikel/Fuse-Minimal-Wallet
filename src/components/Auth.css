@@ -1,18 +1,55 @@
 .input-address{
     margin-right: 15px;
     margin: auto;
-    width: 600px;
+    width: 400px !important;
+    height: 20px;
+}
+
+.auth-header{
+    font-size: 35px;
+    color: rgb(0, 25, 41);
+}
+
+.error{
+    position: relative;
+    top: 20%;
+    color: red;
+    font-size: small;
 }
 
 .container{
-    background-color: rgb(245, 245, 245);
-    /* width: 600px; */
+    position: absolute;
+    background-color: rgb(247, 247, 247) !important;
+    left: 35% !important;
+    top: 20%;
     padding: 15px;
     margin: 20px;
-    /* height: 500px; */
+    height: 400px !important;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px !important;
+}
 
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    width: fit-content;
-    margin: auto;
-    height:fit-content;
+.auth-content{
+    position: relative;
+    top: 15%;
+}
+
+.connect-button{
+    color: #001929 ;
+	text-transform: uppercase;
+	background: #ffffff;
+	padding: 15px;
+	border: 3px solid #001929;
+	border-radius: 6px;
+    width: 230px;
+	display: inline-block;
+	transition: all 0.3s ease 0s;
+}
+
+.connect-button:hover{
+    color: #ffffff ;
+	border-radius: 50px;
+	border-color: #001929;
+    background-color: rgb(0, 25, 41);
+	transition: all 0.3s ease 0s;
+    cursor:pointer;
 }

@@ -79,7 +79,7 @@ class AddToken extends Component{
     render(){
         return(
             <div className="container">
-                <h2>add token</h2>
+                <h2 className="add-token-header" >add token</h2>
                 <FormGroup>
                     <FormControl 
                         type = 'text'
@@ -88,7 +88,7 @@ class AddToken extends Component{
                         onChange = {(event) => this.fetchNewToken(event, "tokenAddress")}
                         className='input-address' />
                 </FormGroup>
-                {this.error()}
+                <br /><br />
                 <FormGroup>
                     <FormControl 
                         type = 'text'
@@ -97,6 +97,7 @@ class AddToken extends Component{
                         onChange = {(event) => this.fetchNewToken(event, "tokenSymbol")}
                         className='input-address' />
                 </FormGroup>
+                <br /><br />
                 <FormGroup>
                     <FormControl 
                         type = 'text'
@@ -105,8 +106,11 @@ class AddToken extends Component{
                         onChange = {(event) => this.fetchNewToken(event, "tokenDecimals")}
                         className='input-address' />
                 </FormGroup>
-                <Button onClick={this.back}>back</Button>
-                <Button onClick={this.next} disabled={!this.state.next_button}>next</Button>
+                {this.error()}
+                <br /><br />
+                <Button className={"nav-button"} onClick={this.back}>back</Button>
+                &nbsp;&nbsp;&nbsp;
+                <Button className={"nav-button"} onClick={this.next} disabled={!this.state.next_button}>next</Button>
         </div>
         )
     }

@@ -1,11 +1,14 @@
-.container{
+.container-main{
+    position: absolute;
+    left: 19%;
+    top: 20%;
     background-color: rgb(245, 245, 245);
     /* width: 600px; */
     padding: 15px;
     margin: 20px;
     /* height: 500px; */
 
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px !important;
     width: fit-content;
     margin: auto;
     height:fit-content;
@@ -13,20 +16,51 @@
 
 .tab-bar{
     overflow: hidden;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(245, 245, 245);
     position: relative;
     width: 900px;
 }
 
-.tab-bar span {
-    /* float: left; */
-    /* display: block; */
+.tab-false {
+    position: relative;
+    display: inline;
     text-align: center;
     padding: 14px 200px;
     text-decoration: none;
     font-size: 17px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     cursor:pointer;
-    color:blue;
+    color:rgb(0, 25, 41);
+}
+
+.tab-false:hover{
+    cursor: pointer;
+    color: white;
+    background-color: rgb(0, 25, 41);
+}
+
+.tab-true{
+    position: relative;
+    display: inline;
+    text-align: center;
+    padding: 14px 200px;
+    text-decoration: none;
+    font-size: 17px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor:pointer;
+    color:rgb(255, 255, 255);
+    background-color:rgb(0, 25, 41);;
     text-decoration:underline;
+}
+
+.account{
+    font-size: 20px;
+    color: rgb(0, 25, 41);
+}
+
+.balance-fuse{
+    position: relative;
+    top: -25px;
+    font-size: 30px;
+    color: rgb(0, 25, 41);
 }

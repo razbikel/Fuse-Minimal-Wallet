@@ -58,22 +58,24 @@ class ConfirmAddToken extends Component{
 
     render(){
         return(
-            <div className="container">
-                <h2>add token confirm</h2>
-                <h4>are you sure you want to add this token?</h4>
+            <div className="container-confirm">
+                <h2 className="add-token-header">add token confirm</h2>
+                <h4 className="add-token-header-small">are you sure you want to add this token?</h4>
                 <hr />
                 <div className="confirm-heads">
-                    <span>token</span>
-                    <span>balance</span>
+                    <div className="confirm-head">token</div>
+                    <div className="confirm-head">balance</div>
                 </div>
+                <br />
                 <div className="confirm-values">
-                    <span>{this.state.token !== undefined ? this.state.token.symbol : null}</span>
-                    <span>{this.state.token !== undefined ? this.state.token.balance : null}</span>
+                    <div className="confirm-value">{this.state.token !== undefined ? this.state.token.symbol : null}</div>
+                    <div className="confirm-value">{this.state.token !== undefined ? this.state.token.balance : null}</div>
                 </div>
                 <br />
                 {this.error()}
-                <Button onClick={this.back}>back</Button>
-                <Button onClick={this.add} disabled={!this.state.next_button}>add token</Button>
+                <Button className={"nav-button"} onClick={this.back}>back</Button>
+                &nbsp;&nbsp;&nbsp;
+                <Button className={"nav-button"} onClick={this.add} disabled={!this.state.next_button}>add token</Button>
         </div>
         )
     }

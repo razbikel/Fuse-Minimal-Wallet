@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import Balances from './Balances/Balances';
 import Transfers from './Transfers/Transfers';
 import { fetchAccountTransfers } from '../actions/accountTransfers';
+import { fetchAccountTokens } from '../actions/accountTokens';
 import { uploadMap } from '../actions/accountTokenTransferMap';
 
 
@@ -12,6 +13,9 @@ class Main extends Component{
     state = {
         tab: 'Balances',
         transfers: [],
+        tokens: undefined,
+        balances_active: true,
+        transfers_active: false
     }
 
     componentDidMount(){
@@ -21,7 +25,13 @@ class Main extends Component{
                 this.tokenTransfers_map()
             })
         })
-        .catch((error) => console.error(error))
+        .catch((error) => console.error(error));
+
+        this.props.fetchAccountTokens(this.props.account.accountAddress)
+        .then(() => {
+            this.setState({ tokens: this.props.accountTokens.tokens})
+        })
+        .catch((error) => console.error(error));
     }
 
     tokenTransfers_map = () => {
@@ -39,7 +49,13 @@ class Main extends Component{
     }
 
     toggleSetTab = (newTab) => {
-        this.setState({ tab: newTab })
+        if(newTab === 'Balances'){
+            this.setState({ tab: newTab, balances_active: true, transfers_active: false })
+        }
+        else{
+            this.setState({ tab: newTab, balances_active: false, transfers_active: true })
+        }
+
     }
 
     getFuseBalance = () => {
@@ -48,15 +64,15 @@ class Main extends Component{
 
     render(){
         return (
-            <div className="container">
-                <h2>Main</h2>
-                <h4>account: {this.props.account.accountAddress}</h4>
-                <br />
-                <h3>{this.getFuseBalance()} FUSE</h3>
+            <div className="container-main">
+                <h4 className="account">account: {this.props.account.accountAddress}</h4>
+                <hr />
+                <br/>
+                <h3 className="balance-fuse">{this.getFuseBalance()} FUSE</h3>
                 <hr />
                 <div className="tab-bar">
-                    <span onClick={() => this.toggleSetTab('Balances')}>Balances</span>
-                    <span onClick={() => this.toggleSetTab('Transfers')}>Transfers</span>
+                    <div className={`tab-${this.state.balances_active}`} onClick={() => this.toggleSetTab('Balances')}>Balances</div>
+                    <div className={`tab-${this.state.transfers_active}`} onClick={() => this.toggleSetTab('Transfers')}>Transfers</div>
                 </div>
                 {
                     this.state.tab === 'Balances' ? <Balances /> : <Transfers />
@@ -68,6 +84,6 @@ class Main extends Component{
 }
 
 export default connect(
-    ({ account, accountTransfers }) => ({ account, accountTransfers }),
-    { fetchAccountTransfers, uploadMap }
+    ({ account, accountTokens, accountTransfers }) => ({ account, accountTokens, accountTransfers }),
+    { fetchAccountTransfers, fetchAccountTokens, uploadMap }
 )(Main);

@@ -26,8 +26,8 @@ class Auth extends Component{
     render(){
         return(
             <div className="container">
-                <h2>Auth</h2>
-                <div>
+                <h2 className={"auth-header"}>connect to fuse network</h2>
+                <div className="auth-content">
                     <FormGroup>
                         <FormControl 
                             type = 'text'
@@ -36,11 +36,13 @@ class Auth extends Component{
                             onChange = {this.account_address}
                             className='input-address' />
                     </FormGroup>
+                    <br />
+                    <br />
+                    <Button className={"connect-button"} onClick={this.connect}>Connect</Button>
                 </div>
-                <Button onClick={this.connect}>Connect</Button>
                 {
                     this.props.account.status === 'error' ? 
-                    <div>{this.props.account.message}</div> : null
+                    <div className="error">{this.props.account.message}</div> : null
                 }
             </div>
         )

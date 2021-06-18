@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  background-color: rgb(0, 25, 41);
+  height: 85px;
+  /* color:white; */
 }
 
 .App-header {
@@ -12,5 +15,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+
 
 

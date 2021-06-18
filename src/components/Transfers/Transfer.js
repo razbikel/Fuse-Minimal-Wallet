@@ -16,11 +16,11 @@ class Transfer extends Component{
     render(){
         const transfer = this.props.transfer;
         return (
-            <div>
+            <div className="transfer" onClick={this.toggleTransferTicket}>
                 <TransferTicketModal show={this.state.transferTicket} close={this.toggleTransferTicket}>
                     <TransferTicket transfer={transfer} account={this.props.account.accountAddress}/>
                 </TransferTicketModal>
-                <div onClick={this.toggleTransferTicket}>{transfer.value} &nbsp;&nbsp;&nbsp;{transfer.gasPrice}</div>
+                <div className="transfer-content" >{transfer.value} &nbsp;&nbsp;&nbsp;{transfer.gasPrice}</div>
             </div>
             
         )

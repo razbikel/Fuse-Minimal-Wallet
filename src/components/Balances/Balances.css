@@ -1,10 +1,22 @@
 .container{
+    position: absolute;
+    left: 20%;
     background-color: rgb(245, 245, 245);
-    /* width: 600px; */
     padding: 15px;
     margin: 20px;
-    /* height: 500px; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: fit-content;
+    margin: auto;
+    height:fit-content;
+}
 
+.container-confirm{
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    background-color: rgb(245, 245, 245);
+    padding: 15px;
+    margin: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     width: fit-content;
     margin: auto;
@@ -25,37 +37,119 @@
 
 .confirm-heads{
     overflow: hidden;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(245, 245, 245);
     position: relative;
     width: 900px;
 }
 
-.confirm-heads span {
-    /* float: left; */
-    /* display: block; */
+.confirm-head{
+    position: relative;
+    display: inline;
     text-align: center;
     padding: 14px 200px;
     text-decoration: none;
     font-size: 17px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
+    color:rgb(255, 255, 255);
+    background-color:rgb(0, 25, 41);
+    text-decoration:underline;
 }
-
 
 .confirm-values{
     overflow: hidden;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(245, 245, 245);
     position: relative;
     width: 900px;
 }
 
-.confirm-values span {
-    /* float: left; */
-    /* display: block; */
+.confirm-value  {
+    position: relative;
+    left: -1%;
+    display: inline;
     text-align: center;
     padding: 14px 200px;
     text-decoration: none;
+    margin-right: 7px;
     font-size: 17px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color:rgb(0, 25, 41);
+}
 
+.token{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 15px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.token:hover{
+    background-color: rgb(0, 25, 41);
+    color: white;
+    cursor:pointer;
+}
+
+.token-content{
+    float: left;
+    position: relative;
+    left: 2%;
+    top: 25%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.button1{
+    color: #001929 ;
+	text-transform: uppercase;
+	background: #ffffff;
+	padding: 20px;
+	border: 3px solid #001929;
+	border-radius: 6px;
+    width: 250px;
+	display: inline-block;
+	transition: all 0.3s ease 0s;
+}
+
+.button1:hover{
+    color: #ffffff ;
+	border-radius: 50px;
+	border-color: #494949;
+    background-color: rgb(0, 25, 41) !important;
+	transition: all 0.3s ease 0s;
+    cursor:pointer;
+}
+
+
+.add-token-header{
+    font-size: 30px;
+    color: rgb(0, 25, 41);
+}
+
+.add-token-header-small{
+    font-size: 15px;
+    color: rgb(0, 25, 41);
+}
+
+
+.nav-button{
+    color: #001929 ;
+	text-transform: uppercase;
+	background: #ffffff;
+	padding: 10px;
+	border: 3px solid #001929;
+	border-radius: 6px;
+    width: 150px;
+	display: inline-block;
+	transition: all 0.3s ease 0s;
+}
+
+.nav-button:hover:enabled{
+    color: #ffffff ;
+	border-radius: 50px;
+	border-color: #494949;
+    background-color: rgb(0, 25, 41) !important;
+	transition: all 0.3s ease 0s;
+    cursor:pointer;
+}
+
+.nav-button:disabled{
+    background: #dddddd;
+    cursor:no-drop;
 }

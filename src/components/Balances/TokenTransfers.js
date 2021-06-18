@@ -10,7 +10,6 @@ class TokenTransfers extends Component{
     }
 
     render(){
-        console.log(this.props.location)
         return(
             <div>
                 <h2>token trasnfers</h2>
