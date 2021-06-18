@@ -11,14 +11,14 @@
     height:fit-content;
 }
 
-.route-bar{
+.tab-bar{
     overflow: hidden;
     background-color: rgb(255, 255, 255);
     position: relative;
     width: 900px;
 }
 
-.route-bar span {
+.tab-bar span {
     /* float: left; */
     /* display: block; */
     text-align: center;

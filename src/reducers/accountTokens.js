@@ -1,4 +1,4 @@
-import {ACCOUNT_TOKENS} from '../actions/types';
+import {ACCOUNT_TOKENS, UPDATE_ACCOUNT_TOKENS } from '../actions/types';
 import fetchStates from './fetchStates';
 
 const DEFAULT_ACCOUNT_TOKENS = { tokens: [] }
@@ -14,12 +14,23 @@ const accountTokensReducer = (state = DEFAULT_ACCOUNT_TOKENS, action) => {
                 message: action.message,
              };
         case ACCOUNT_TOKENS.Success:
+
+            // check if user add tokens, if yes the fetched tokens are not relevant
+            let newTokens = state.tokens.length < action.result.length ? action.result : state.tokens; 
             return { 
                 ...state,
                 status: fetchStates.success,  
                 message: action.message, 
-                tokens: action.result
+                tokens: newTokens
              };
+
+        case UPDATE_ACCOUNT_TOKENS.Success:
+            return { 
+                ...state,
+                status: fetchStates.success,  
+                message: action.message, 
+                tokens: action.tokens
+                };
         default:
             return state;
     }

@@ -21,3 +21,41 @@
     color: red;
     font-size: small;
 }
+
+
+.confirm-heads{
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    width: 900px;
+}
+
+.confirm-heads span {
+    /* float: left; */
+    /* display: block; */
+    text-align: center;
+    padding: 14px 200px;
+    text-decoration: none;
+    font-size: 17px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+
+.confirm-values{
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    width: 900px;
+}
+
+.confirm-values span {
+    /* float: left; */
+    /* display: block; */
+    text-align: center;
+    padding: 14px 200px;
+    text-decoration: none;
+    font-size: 17px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}

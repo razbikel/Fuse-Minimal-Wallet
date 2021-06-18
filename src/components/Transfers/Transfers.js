@@ -24,10 +24,11 @@ class Transfers extends Component{
                 <h2>Transfers</h2>
                 <div>
                     {
-                        transfers !== undefined ? 
-                        transfers.map((transfer, index) => {
-                                return <Transfer transfer={transfer} key={index}/>
-                            }) : null  
+                        transfers === undefined || this.props.accountTransfers.status === 'fetching' ? 
+                            <div>fetchinig...</div>  :
+                            transfers.map((transfer, index) => {
+                                    return <Transfer transfer={transfer} key={index}/>
+                                }) 
                     }
                 </div>
             </div>

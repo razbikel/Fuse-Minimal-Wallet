@@ -8,11 +8,11 @@ import Transfers from './Transfers/Transfers';
 class Main extends Component{
 
     state = {
-        route: 'Balances'
+        tab: 'Balances'
     }
 
-    toggleSetRoute = (newRoute) => {
-        this.setState({ route: newRoute })
+    toggleSetTab = (newTab) => {
+        this.setState({ tab: newTab })
     }
 
     getFuseBalance = () => {
@@ -27,12 +27,12 @@ class Main extends Component{
                 <br />
                 <h3>{this.getFuseBalance()} FUSE</h3>
                 <hr />
-                <div className="route-bar">
-                    <span onClick={() => this.toggleSetRoute('Balances')}>Balances</span>
-                    <span onClick={() => this.toggleSetRoute('Transfers')}>Transfers</span>
+                <div className="tab-bar">
+                    <span onClick={() => this.toggleSetTab('Balances')}>Balances</span>
+                    <span onClick={() => this.toggleSetTab('Transfers')}>Transfers</span>
                 </div>
                 {
-                    this.state.route === 'Balances' ? <Balances /> : <Transfers />
+                    this.state.tab === 'Balances' ? <Balances /> : <Transfers />
                 }
             </div>
         )

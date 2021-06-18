@@ -2,6 +2,7 @@ import  React, {Component} from 'react';
 import {Button, FormGroup, FormControl} from 'react-bootstrap';
 import history from '../../history';
 import {connect} from 'react-redux';
+import { fetchToken } from '../../actions/addToken';
 
 import './Balances.css'
 
@@ -11,13 +12,13 @@ class AddToken extends Component{
         tokenAddress: '',
         tokenSymbol: '',
         tokenDecimals: '',
+        accountTokens: [],
         next_button : false,
         show_message: false,
         message: ''
     }
 
     fetchNewToken = (event, key) => {
-
         let isExist;
         let accountTokens = this.props.accountTokens.tokens;
         let newState = { ...this.state };
@@ -28,7 +29,7 @@ class AddToken extends Component{
                 return;
             }
             isExist = accountTokens.filter((token) => {
-                return token.contractAddress === this.state.tokenAddress;
+                return token.contractAddress.toLowerCase() === this.state.tokenAddress.toLowerCase();
             })
 
             // this token have already exists in wallet
@@ -39,11 +40,12 @@ class AddToken extends Component{
 
             else{
                 this.setState({ show_message: false, message:''})
-                fetch(`https://explorer.fuse.io/api?module=${'token'}&action=${'getToken'}&contractaddress=${this.state.tokenAddress}`)
-                .then(res => res.json())
-                .then(json => {
-                    if (json.message === "OK"){
-                        this.setState({ tokenSymbol: json.result.symbol, tokenDecimals: json.result.decimals, next_button: true })
+
+                this.props.fetchToken(this.state.tokenAddress)
+                .then(() => {
+                    const token = this.props.addToken.token;
+                    if (this.props.addToken.message === "OK"){
+                        this.setState({ tokenSymbol: token.symbol, tokenDecimals: token.decimals, next_button: true })
                     }
                     else{
                         this.setState({ 
@@ -51,18 +53,17 @@ class AddToken extends Component{
                             tokenDecimals: '', 
                             next_button: false, 
                             show_message: true,
-                            message: json.message
-                         })
+                            message: this.props.addToken.message
+                            })
                     }
+
                 })
-                .catch(error => console.log(error));
+                .catch(error => console.error(error));
             }
         });
-
     }
 
     back = () => {
-        //history.push('/main')
         history.goBack();
     }
 
@@ -112,6 +113,6 @@ class AddToken extends Component{
 }
 
 export default connect(
-    ({ accountTokens }) => ({  accountTokens }),
-    null
+    ({ account, accountTokens, addToken }) => ({  account, accountTokens, addToken }),
+    { fetchToken }
 )(AddToken);

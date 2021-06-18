@@ -3,8 +3,6 @@ import {connect} from 'react-redux';
 import { fetchAccountTokens } from '../../actions/accountTokens';
 import { Button } from 'react-bootstrap';
 import Token from './Token';
-// import AddTokenModal from '../Modal/AddTokenModal';
-// import AddToken from './AddToken';
 import history from '../../history';
 
 class Balances extends Component{
@@ -32,10 +30,11 @@ class Balances extends Component{
                 <h2>Balances</h2>
                 <div>
                     {
-                        tokens !== undefined ? 
+                        tokens === undefined || this.props.accountTokens.status === 'fetching' ?
+                            <div>fetchinig...</div>  :
                             tokens.map((token, index) => {
                                 return <Token token={token} key={index}/>
-                            }) : null  
+                            })   
                     }
                 </div>
                 <br />
