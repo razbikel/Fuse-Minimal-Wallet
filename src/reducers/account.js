@@ -1,7 +1,7 @@
-import {ACCOUNT} from '../actions/types';
+import {ACCOUNT, UPLOAD_TOKEN_TRANSFER_MAP} from '../actions/types';
 import fetchStates from './fetchStates';
 
-const DEFAULT_ACCOUNT = { loggedIn: false }
+const DEFAULT_ACCOUNT = { loggedIn: false, map: {} }
 
 const accountReducer = (state = DEFAULT_ACCOUNT, action) => {
     switch (action.type){
@@ -25,6 +25,11 @@ const accountReducer = (state = DEFAULT_ACCOUNT, action) => {
                 accountAddress: action.accountAddress, 
                 result: action.result
              };
+        case UPLOAD_TOKEN_TRANSFER_MAP.Success:
+            return {
+                ...state,
+                map: action.map
+            };
         default:
             return state;
     }

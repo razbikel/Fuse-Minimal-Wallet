@@ -1,13 +1,13 @@
-import { UPDATE_ACCOUNT_TOKENS } from './types';
+import { UPLOAD_TOKEN_TRANSFER_MAP } from './types';
 
-export const sendUpdatedAccountTokens = (accountTokens) => {
+export const uploadMap = (token_transfer_map) => {
     return (
         (dispatch) => {
             return new Promise((resolve, reject) => {
                 resolve(
                     dispatch({
-                        type: UPDATE_ACCOUNT_TOKENS.Success,
-                        tokens: accountTokens
+                        type: UPLOAD_TOKEN_TRANSFER_MAP.Success,
+                        map: token_transfer_map
                     })
                 )
             })

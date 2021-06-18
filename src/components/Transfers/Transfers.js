@@ -10,12 +10,9 @@ class Transfers extends Component{
     }
 
     componentDidMount(){
-        this.props.fetchAccountTransfers(this.props.account.accountAddress)
-        .then(() => {
-            this.setState({ transfers: this.props.accountTransfers.transfers})
-        })
-        .catch((error) => console.error(error))
+        this.setState({ transfers: this.props.accountTransfers.transfers })
     }
+
 
     render(){
         const transfers = this.state.transfers;

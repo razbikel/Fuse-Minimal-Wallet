@@ -10,10 +10,7 @@ import './Balances.css'
 class ConfirmAddToken extends Component{
 
     state = {
-        tokenSymbol: undefined,
-        tokenName: undefined,
         token: undefined,
-        balance: undefined,
         next_button : false,
         show_message: false,
         message: ''

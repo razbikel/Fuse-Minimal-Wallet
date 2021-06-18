@@ -1,0 +1,11 @@
+.ticket {
+    position: fixed;
+    box-sizing: border-box;
+    width: 300px;
+    height: 450px;
+    margin: 150px auto 0;
+    padding: 20px;
+    border-radius: 10px;
+    background: #FBFBFB;
+    box-shadow: 2px 2px 15px 0px #AB9B0D;    
+}
