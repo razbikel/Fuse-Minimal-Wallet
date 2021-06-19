@@ -3,7 +3,7 @@ import './Main.css'
 import {connect} from 'react-redux';
 import Balances from './Balances/Balances';
 import Transfers from './Transfers/Transfers';
-import AccountsMenu from './AccountsMenu';
+import AccountsMenu from './AccountsMenu/AccountsMenu';
 import AccountsMenuModal from './Modal/AccountsMenuModal';
 import { fetchAccountTransfers } from '../actions/accountTransfers';
 import { fetchAccountTokens } from '../actions/accountTokens';
@@ -37,6 +37,8 @@ class Main extends Component{
         .catch((error) => console.error(error));
     }
 
+
+    // hash map for the account token - the keys are the tokens and values are the transfers details
     tokenTransfers_map = () => {
         let token_transfer_map = new Map()
         this.state.transfers.forEach((transfer) => {
@@ -90,7 +92,7 @@ class Main extends Component{
                     {
                         this.state.tab === 'Balances' ? <Balances /> : <Transfers transfers={this.props.accountTransfers.transfers} />
                     }
-            </div>
+                </div>
             </div>
         )
     }

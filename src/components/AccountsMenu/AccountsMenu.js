@@ -1,11 +1,11 @@
 import  React, {Component} from 'react';
 import {connect} from 'react-redux';
-import history from '../history';
-import { fetchAccountAddress } from '../actions/account';
-import { fetchAccountTransfers } from '../actions/accountTransfers';
-import { fetchAccountTokens } from '../actions/accountTokens';
+import history from '../../history';
+import { fetchAccountAddress } from '../../actions/account';
+import { fetchAccountTransfers } from '../../actions/accountTransfers';
+import { fetchAccountTokens } from '../../actions/accountTokens';
 
-import './Main.css'
+import '../Main.css'
 
 
 class AccountsMenu extends Component{
@@ -41,7 +41,13 @@ class AccountsMenu extends Component{
                     accounts.map((account, index) => {
                         return (
                             <div>
-                                <div key={index} className={this.getAccountStyle(account)} onClick={() => this.updateCurrentAccount(account)} >{account}</div>
+                                <div 
+                                    key={index} 
+                                    className={this.getAccountStyle(account)} 
+                                    onClick={() => this.updateCurrentAccount(account)}
+                                >
+                                    {account}
+                                </div>
                                 <hr />
                             </div>
                         )

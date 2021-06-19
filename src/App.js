@@ -10,7 +10,7 @@ import Main from './components/Main'
 import AddToken from './components/Balances/AddToken';
 import ConfirmAddToken from './components/Balances/ConfirmAddToken';
 import TokenTransfers from './components/Balances/TokenTransfers';
-import AddAccount from './components/AddAccount';
+import AddAccount from './components/AccountsMenu/AddAccount';
 import fuse from './assets/fuse.png'
 
 

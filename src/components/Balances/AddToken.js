@@ -79,7 +79,7 @@ class AddToken extends Component{
     render(){
         return(
             <div className="container">
-                <h2 className="add-token-header" >add token</h2>
+                <h2 className="add-token-header" >Add Token</h2>
                 <FormGroup>
                     <FormControl 
                         type = 'text'

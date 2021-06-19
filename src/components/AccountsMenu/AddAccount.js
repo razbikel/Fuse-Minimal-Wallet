@@ -1,9 +1,9 @@
 import  React, {Component} from 'react';
-import history from '../history';
-import Auth from './Auth';
+import history from '../../history';
+import Auth from '../Auth';
 import { Button } from 'react-bootstrap';
 
-import './Balances/Balances.css'
+import '../Balances/Balances.css'
 
 class AddAccount extends Component{
 
