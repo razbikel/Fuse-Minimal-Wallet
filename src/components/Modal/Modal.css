@@ -16,11 +16,12 @@
 .AccountsMenuModal {
     position: fixed;
     z-index: 500;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 25, 41);
     width: fit-content;
     margin: auto;
     height:fit-content;
     border: 1px solid #ccc;
+    color: white;
     box-shadow: 1px 1px 1px black;
     padding: 16px;
     left: 60%;

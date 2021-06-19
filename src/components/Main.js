@@ -70,14 +70,13 @@ class Main extends Component{
     }
 
     render(){
-        console.log(this.props.accountTransfers)
         return (
             <div>
                 <AccountsMenuModal show={this.state.accountsMenu}>
                     <AccountsMenu />
                 </AccountsMenuModal>
                 <div className="container-main">
-                    <div className="accounts-menu" onClick={this.accountsMenu}>menu</div>
+                    <div className="accounts-menu" onClick={this.accountsMenu}>Accounts Menu {'>'}</div>
                     <h4 className="account"><u>account:</u> {this.props.account.accountAddress}</h4>
                     <hr />
                     <br/>

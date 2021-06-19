@@ -18,6 +18,8 @@ class Balances extends Component{
                     {
                         tokens === undefined || this.props.accountTokens.status === 'fetching' ?
                             <div>fetchinig...</div>  :
+                            this.props.accountTokens.status === 'fetching' ?
+                            <div>fetchinig...</div>  :
                             this.props.accountTokens.status === 'error' ? <div>{this.props.accountTokens.message}</div> :
                             tokens.map((token, index) => {
                                 return <Token token={token} key={index}/>

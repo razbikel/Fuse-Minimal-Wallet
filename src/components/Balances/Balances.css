@@ -168,3 +168,33 @@
     background: #dddddd;
     cursor:no-drop;
 }
+
+
+.addAccount-button{
+    position: absolute;
+    color: #001929 ;
+    top: 68% ;
+    left: 45%;
+	text-transform: uppercase;
+	background: #ffffff;
+	padding: 10px;
+	border: 3px solid #001929;
+	border-radius: 6px;
+    width: 150px;
+	display: inline-block;
+	transition: all 0.3s ease 0s;
+}
+
+.addAccount-button:hover:enabled{
+    color: #ffffff ;
+	border-radius: 50px;
+	border-color: #494949;
+    background-color: rgb(0, 25, 41) !important;
+	transition: all 0.3s ease 0s;
+    cursor:pointer;
+}
+
+.addAccount-button:disabled{
+    background: #dddddd;
+    cursor:no-drop;
+}

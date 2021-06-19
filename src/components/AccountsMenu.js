@@ -5,6 +5,8 @@ import { fetchAccountAddress } from '../actions/account';
 import { fetchAccountTransfers } from '../actions/accountTransfers';
 import { fetchAccountTokens } from '../actions/accountTokens';
 
+import './Main.css'
+
 
 class AccountsMenu extends Component{
 
@@ -26,16 +28,27 @@ class AccountsMenu extends Component{
         .catch(error => console.error(error))
     }
 
+    getAccountStyle = (accountItem) => {
+        let current =  this.props.account.accountAddress === accountItem ? true : false;
+        return `account-menu-item-${current}`
+    }
+
     render(){
         const accounts = this.props.account.accounts
         return(
             <div>
                 {
                     accounts.map((account, index) => {
-                        return <div onClick={() => this.updateCurrentAccount(account)} key={index}>{account}</div>
+                        return (
+                            <div>
+                                <div key={index} className={this.getAccountStyle(account)} onClick={() => this.updateCurrentAccount(account)} >{account}</div>
+                                <hr />
+                            </div>
+                        )
                     })
                 }
-                <div onClick={this.addAccount}>add account</div>
+                <br />
+                <div className={"add-account-btn"}onClick={this.addAccount}>+ Add Account</div>
             </div>
         )
     }

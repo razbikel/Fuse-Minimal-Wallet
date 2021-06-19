@@ -69,8 +69,37 @@
 
 .accounts-menu{
     position:absolute;
-
-    color:rgb(0, 0, 0);
+    font-size: 17px;
+    top: -110px;
+    left: 85%;
+    color:rgb(255, 255, 255);
     cursor: pointer;
     text-decoration:underline;
+}
+
+.accounts-menu:hover{
+    color: rgb(97, 255, 145);
+}
+
+.account-menu-item-false{
+    cursor: pointer;
+}
+
+.account-menu-item-true{
+    cursor: pointer;
+    color: rgb(97, 255, 145);
+}
+
+.account-menu-item:hover{
+    color: rgb(97, 255, 145);
+}
+
+.add-account-btn{
+    border: 4px white !important;
+    cursor: pointer;
+    font-size: large;
+}
+
+.add-account-btn:hover{
+    color: rgb(97, 255, 145);
 }

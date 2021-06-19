@@ -3,6 +3,8 @@ import history from '../history';
 import Auth from './Auth';
 import { Button } from 'react-bootstrap';
 
+import './Balances/Balances.css'
+
 class AddAccount extends Component{
 
     back = () => {
@@ -13,7 +15,7 @@ class AddAccount extends Component{
         return(
             <div>
                 <Auth />
-                <Button onClick={this.back}>back</Button>
+                <Button className="addAccount-button" onClick={this.back}>back</Button>
             </div>
         )
     }
