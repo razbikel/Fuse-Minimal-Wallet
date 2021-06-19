@@ -12,3 +12,19 @@
     box-sizing: border-box;
     transition: all 0.3s ease-out;
 }
+
+.AccountsMenuModal {
+    position: fixed;
+    z-index: 500;
+    background-color: rgb(255, 255, 255);
+    width: fit-content;
+    margin: auto;
+    height:fit-content;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    padding: 16px;
+    left: 60%;
+    top: 12%;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+}

@@ -1,7 +1,7 @@
-import {ACCOUNT, UPLOAD_TOKEN_TRANSFER_MAP} from '../actions/types';
+import {ACCOUNT, UPLOAD_TOKEN_TRANSFER_MAP } from '../actions/types';
 import fetchStates from './fetchStates';
 
-const DEFAULT_ACCOUNT = { loggedIn: false, map: {} }
+const DEFAULT_ACCOUNT = { loggedIn: false, accounts: [], map: {} }
 
 const accountReducer = (state = DEFAULT_ACCOUNT, action) => {
     switch (action.type){
@@ -17,13 +17,17 @@ const accountReducer = (state = DEFAULT_ACCOUNT, action) => {
                 result: null
              };
         case ACCOUNT.LoggedInSuccess:
+            let newAccounts = [ ...state.accounts];
+            if (!newAccounts.includes(action.accountAddress))
+            newAccounts.push(action.accountAddress);
             return { 
                 ...state,
                 status: fetchStates.success, 
                 loggedIn: action.loggedIn, 
                 message: action.message,
                 accountAddress: action.accountAddress, 
-                result: action.result
+                result: action.result,
+                accounts: newAccounts
              };
         case UPLOAD_TOKEN_TRANSFER_MAP.Success:
             return {

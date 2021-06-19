@@ -10,6 +10,7 @@ import Main from './components/Main'
 import AddToken from './components/Balances/AddToken';
 import ConfirmAddToken from './components/Balances/ConfirmAddToken';
 import TokenTransfers from './components/Balances/TokenTransfers';
+import AddAccount from './components/AddAccount';
 import fuse from './assets/fuse.png'
 
 
@@ -46,7 +47,8 @@ function App() {
                 <AuthRoute path= '/main' component={Main}/> 
                 <AuthRoute path= '/add-token' component={AddToken}/>
                 <AuthRoute path= '/confirm-add-token' component={ConfirmAddToken}/>
-                <AuthRoute path= '/token-transfers' component={TokenTransfers}/>  
+                <AuthRoute path= '/token-transfers' component={TokenTransfers}/> 
+                <AuthRoute path= '/add-account' component={AddAccount}/>  
               </Switch>
             </Router>
       </div>

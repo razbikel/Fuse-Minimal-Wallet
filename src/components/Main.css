@@ -66,3 +66,11 @@
     font-size: 30px;
     color: rgb(0, 25, 41);
 }
+
+.accounts-menu{
+    position:absolute;
+
+    color:rgb(0, 0, 0);
+    cursor: pointer;
+    text-decoration:underline;
+}

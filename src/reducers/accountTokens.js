@@ -16,7 +16,14 @@ const accountTokensReducer = (state = DEFAULT_ACCOUNT_TOKENS, action) => {
         case ACCOUNT_TOKENS.Success:
 
             // check if user add tokens, if yes the fetched tokens are not relevant
-            let newTokens = state.tokens.length < action.result.length ? action.result : state.tokens; 
+            // if case if of change account, replace tokens for sure
+            let newTokens
+            if (action.changeAccount){
+                newTokens = action.result
+            }
+            else{
+                newTokens = state.tokens.length < action.result.length ? action.result : state.tokens;
+            }
             return { 
                 ...state,
                 status: fetchStates.success,  

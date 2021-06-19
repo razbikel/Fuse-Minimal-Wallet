@@ -1,7 +1,7 @@
 import { ACCOUNT_TOKENS } from './types';
 import {BACKEND} from '../config';
 
-export const fetchAccountTokens = (accountAddress) => {
+export const fetchAccountTokens = (accountAddress, changeAccount) => {
     return (
         (dispatch) => {
             dispatch({ type: ACCOUNT_TOKENS.Fetching });
@@ -18,7 +18,8 @@ export const fetchAccountTokens = (accountAddress) => {
                     else {
                         dispatch({
                             type: ACCOUNT_TOKENS.Success,
-                            ...json
+                            ...json,
+                            changeAccount
                         })
                     }
     
