@@ -18,7 +18,7 @@ class Auth extends Component{
     connect = () => {
         this.props.fetchAccountAddress(this.state.account_address)
         .then(() => {
-            history.push('/main');
+            history.push(`/main?address=${this.props.account.accountAddress}`);
         })
         .catch(error => console.error(error))
     };

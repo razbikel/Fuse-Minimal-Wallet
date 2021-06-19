@@ -47,7 +47,7 @@ class ConfirmAddToken extends Component{
         let updatedTokens = this.props.accountTokens.tokens;
         updatedTokens.push(this.state.token);
         this.props.sendUpdatedAccountTokens(updatedTokens)
-        .then(() => history.push('/main'))
+        .then(() => history.push(`/main?address=${this.props.account.accountAddress}`))
         .catch((error) => console.error(error));
     }
 

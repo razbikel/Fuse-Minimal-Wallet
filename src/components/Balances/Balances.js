@@ -7,7 +7,7 @@ import history from '../../history';
 class Balances extends Component{
 
     toggleAddToken = () => {
-        history.push('/add-token')
+        history.push(`/add-token?address=${this.props.account.accountAddress}`)
     }
 
     render(){

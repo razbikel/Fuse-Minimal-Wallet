@@ -25,13 +25,22 @@ const AuthRoute = (props) => {
   return <Route to={path} component={component}/>
 }
 
+const routeToMain = () => {
+  if (store.getState().account.accountAddress !== undefined){
+      history.push(`/main?address=${store.getState().account.accountAddress}`)
+  }
+  else{
+      history.push('/main')
+  }
+}
+
 
 function App() {
   return (
     <Provider store = {store}>
         <div className="App">
-            <img src={fuse} alt={"img"}></img>
             <Router history={history}>
+            <img style={{cursor:'pointer'}} onClick={routeToMain} src={fuse} alt={"img"}></img>
               <Switch>
                 <Route exact path= '/' component={Auth} />
                 <AuthRoute path= '/main' component={Main}/> 

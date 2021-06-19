@@ -68,7 +68,7 @@ class AddToken extends Component{
     }
 
     next = () => {
-        history.push('/confirm-add-token') 
+        history.push(`/confirm-add-token?account_add=${this.props.account.accountAddress}&token_add=${this.state.tokenAddress}`) 
     }
 
     error = () => {
