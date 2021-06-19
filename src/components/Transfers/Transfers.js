@@ -6,6 +6,7 @@ import Transfer from './Transfer';
 class Transfers extends Component{
 
     render(){
+        console.log(this.props.accountTransfers)
         const transfers = this.props.transfers;
         return(
             <div>
@@ -13,6 +14,7 @@ class Transfers extends Component{
                     {
                         transfers === undefined && this.props.accountTransfers.status === 'fetching' ? 
                             <div>fetchinig...</div>  :
+                            this.props.accountTransfers.status === 'error' ? <div>{this.props.accountTransfers.message}</div> :
                             (transfers === undefined || transfers === []) && this.props.accountTransfers.status !== 'fetching' ? 
                                 <div>You dont have any transfers for this token</div> :
                                 transfers.map((transfer, index) => {

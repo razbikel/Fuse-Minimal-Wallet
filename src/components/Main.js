@@ -65,7 +65,7 @@ class Main extends Component{
     render(){
         return (
             <div className="container-main">
-                <h4 className="account">account: {this.props.account.accountAddress}</h4>
+                <h4 className="account"><u>account:</u> {this.props.account.accountAddress}</h4>
                 <hr />
                 <br/>
                 <h3 className="balance-fuse">{this.getFuseBalance()} FUSE</h3>

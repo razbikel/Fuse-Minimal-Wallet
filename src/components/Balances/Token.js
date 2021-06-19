@@ -5,8 +5,7 @@ import history from '../../history'
 
 class Token extends Component{
 
-
-    getTokenRealValue = (balance, decimals) => {
+     getTokenRealValue = (balance, decimals) => {
         return parseFloat(balance) / (Math.pow(10, parseFloat(decimals)));
     }
 

@@ -19,7 +19,7 @@ class TokenTransfers extends Component{
         const tokenBalance = this.props.location.state.balance;
         return(
             <div className="tt-container">
-                <h4 className="account">account: {this.props.account.accountAddress}</h4>
+                <h4 className="account"><u>account:</u> {this.props.account.accountAddress}</h4>
                 <hr />
                 <h3 className="balance-fuse">{tokenBalance}&nbsp;&nbsp;{tokenSymbol} - trasnfers:</h3>
                 <Transfers transfers={transfers}/>

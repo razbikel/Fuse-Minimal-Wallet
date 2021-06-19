@@ -31,3 +31,11 @@
     top: 25%;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.more-details{
+    position: absolute;
+    padding-left: 80%;
+    padding-top: 1.5%;
+    text-decoration:underline;
+    overflow: hidden !important;
+}
