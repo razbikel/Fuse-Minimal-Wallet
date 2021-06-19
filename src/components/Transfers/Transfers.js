@@ -6,7 +6,6 @@ import Transfer from './Transfer';
 class Transfers extends Component{
 
     render(){
-        console.log(this.props.accountTransfers)
         const transfers = this.props.transfers;
         return(
             <div>

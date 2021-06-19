@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button } from 'react-bootstrap';
-
 import './Modal.css'
+import '../Balances/Balances.css'
 
 
 class TransferTicketModal extends Component {
@@ -25,7 +25,7 @@ class TransferTicketModal extends Component {
                 }}>
                     {this.props.children}
                     <br />
-                    <Button onClick={this.props.close}>Close</Button>
+                    <Button className="nav-button" onClick={this.props.close}>Close</Button>
                 </div>
         )
     }
