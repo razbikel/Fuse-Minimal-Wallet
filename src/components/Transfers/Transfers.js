@@ -6,18 +6,18 @@ import Transfer from './Transfer';
 class Transfers extends Component{
 
     render(){
-        const transfers = this.props.accountTransfers.transfers;
+        const transfers = this.props.transfers;
         return(
             <div>
                 <div>
-                    <br />
-                    <br />
                     {
-                        transfers === undefined || this.props.accountTransfers.status === 'fetching' ? 
+                        transfers === undefined && this.props.accountTransfers.status === 'fetching' ? 
                             <div>fetchinig...</div>  :
-                            transfers.map((transfer, index) => {
-                                    return <Transfer transfer={transfer} key={index}/>
-                                }) 
+                            (transfers === undefined || transfers === []) && this.props.accountTransfers.status !== 'fetching' ? 
+                                <div>You dont have any transfers for this token</div> :
+                                transfers.map((transfer, index) => {
+                                        return <Transfer transfer={transfer} key={index}/>
+                                    }) 
                     }
                 </div>
             </div>

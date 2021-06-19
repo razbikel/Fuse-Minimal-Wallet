@@ -74,8 +74,9 @@ class Main extends Component{
                     <div className={`tab-${this.state.balances_active}`} onClick={() => this.toggleSetTab('Balances')}>Balances</div>
                     <div className={`tab-${this.state.transfers_active}`} onClick={() => this.toggleSetTab('Transfers')}>Transfers</div>
                 </div>
+                <br /><br />
                 {
-                    this.state.tab === 'Balances' ? <Balances /> : <Transfers />
+                    this.state.tab === 'Balances' ? <Balances /> : <Transfers transfers={this.state.transfers} />
                 }
             </div>
         )

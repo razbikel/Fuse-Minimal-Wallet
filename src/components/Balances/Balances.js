@@ -15,8 +15,6 @@ class Balances extends Component{
         return(
             <div>
                 <div>
-                    <br />
-                    <br />
                     {
                         tokens === undefined || this.props.accountTokens.status === 'fetching' ?
                             <div>fetchinig...</div>  :

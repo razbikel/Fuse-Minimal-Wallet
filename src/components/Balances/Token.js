@@ -15,7 +15,8 @@ class Token extends Component{
         history.push('/token-transfers', {
             transfers,
             account: this.props.account.accountAddress,
-            symbol: token.symbol
+            symbol: token.symbol,
+            balance: this.getTokenRealValue(token.balance, token.decimals)
         });
 
     }
