@@ -11,7 +11,7 @@ class Balances extends Component{
     }
 
     render(){
-        const tokens = this.props.accountTokens.tokens;
+        const tokens = this.props.tokens;
         return(
             <div>
                 <div>
@@ -20,7 +20,9 @@ class Balances extends Component{
                             <div>fetchinig...</div>  :
                             this.props.accountTokens.status === 'fetching' ?
                             <div>fetchinig...</div>  :
-                            this.props.accountTokens.status === 'error' ? <div>{this.props.accountTokens.message}</div> :
+                            this.props.accountTokens.status === 'error' && tokens === [] ? <div>{this.props.accountTokens.message}</div> :
+                             tokens.length === 0 ? <div>No tokens found</div> :
+
                             tokens.map((token, index) => {
                                 return <Token token={token} key={index}/>
                             })   

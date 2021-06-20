@@ -90,7 +90,7 @@ class Main extends Component{
                     </div>
                     <br /><br />
                     {
-                        this.state.tab === 'Balances' ? <Balances /> : <Transfers transfers={this.props.accountTransfers.transfers} />
+                        this.state.tab === 'Balances' ? <Balances tokens={this.props.accountTokens.tokens}/> : <Transfers transfers={this.props.accountTransfers.transfers} />
                     }
                 </div>
             </div>
